@@ -8,7 +8,15 @@ cc_library(
     name = "map_impl",
     hdrs = ["map_impl.h"],
     deps = [
-        ":maybe",
+        ":maybe", "Node"
+    ],
+)
+
+cc_library(
+    name = "Node",
+    hdrs = ["Node.h"],
+    deps = [
+
     ],
 )
 

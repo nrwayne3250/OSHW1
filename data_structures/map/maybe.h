@@ -12,13 +12,13 @@ private:
 public:
 
     // we have an actual value
-    explicit Maybe(const ValueType& value)
+    explicit Maybe(const ValueType& value) // constructor to create a true maybe object if the key was found by get
         : is_present_(true),
           value_(value)
     {}
 
     // empty case
-    Maybe()
+    Maybe() // default constructor will create a false maybe object if key not found by get
         : is_present_(false),
           value_(nullptr)
     {}

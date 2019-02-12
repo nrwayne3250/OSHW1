@@ -27,6 +27,13 @@ TEST(MapTests, testInitialSize) {
     EXPECT_EQ(0, map.Size());
 }
 
+    TEST(MapTests, testPut) {
+        StringMap map = create();
+        map.Put("a", "abc");
+        auto result = map.Get("a");
+        EXPECT_EQ(1, map.Size());
+    }
+
 TEST(MapTests, testPutThenGet) {
     StringMap map = create();
 
@@ -111,7 +118,7 @@ TEST(MapTests, testRemove) {
     EXPECT_EQ(1, map.Size());
     EXPECT_TRUE(map.Remove("a"));
     EXPECT_EQ(0, map.Size());
-    EXPECT_FALSE(map.Remove("a"));
+   EXPECT_FALSE(map.Remove("a"));
 }
 
 TEST(MapTests, testRemove_BadHash) {
